@@ -22,5 +22,3 @@ export function FavoritesProvider({ children }) {
     </FavoritesContext.Provider>
   );
 }
-
-export default FavoritesContext;
