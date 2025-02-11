@@ -1,0 +1,49 @@
+body {
+  background-color: black;
+  color: #FFFF00; /* Changed to valid hex color for neon yellow */
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #222;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navbar a {
+  color: #FFFF00; /* Changed to valid hex color for neon yellow */
+  text-decoration: none;
+  margin: 0 20px;
+  
+}
+
+.navbar a:hover {
+color: #FFFF00; /* Changed to valid hex color for neon yellow */
+
+}
+
+.navbar input[type="text"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #faf3cb; /* Darker yellow on hover */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Blurry effect on hover */
+}
+
+button {
+  background-color: #FFFF00; /* Button background color */
+  color: black; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  
+}
+
+button:hover {
+  background-color: #FFD700; /* Darker yellow on hover */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Blurry effect on hover */
+}

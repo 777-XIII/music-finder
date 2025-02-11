@@ -12,7 +12,7 @@ const Home = () => {
       try {
         const data = await fetchSongs();
         console.log("Fetched songs data:", data); // Log the fetched data
-        setSongs(data);
+        setSongs(data || []); // Ensure songs is an array
       } catch (error) {
         setError("Failed to fetch songs.");
       } finally {
