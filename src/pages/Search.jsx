@@ -21,6 +21,7 @@ function Search() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
+        <button type="submit">Search</button>
       </form>
       <div>
         {songs.map((song) => (
