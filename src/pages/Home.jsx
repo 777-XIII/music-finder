@@ -1,42 +1,11 @@
-// import React, { useEffect, useState } from "react";
-// import { fetchSongs } from "../api/musicApi";
-// import SongCard from "../components/SongCard";
+function Home() {
+  return (
+    <div>
+      <h1>Welcome to MusicFinder</h1>
+      <p>Search for your favorite songs and add them to your playlist</p>
+      <p>Click on 'Search' to get started</p>
+    </div>
+  );
+}
 
-// const Home = () => {
-//   const [songs, setSongs] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const getSongs = async () => {
-//       try {
-//         const data = await fetchSongs();
-//         console.log("Fetched songs data:", data); // Log the fetched data
-//         setSongs(data || []); // Ensure songs is an array
-//       } catch (error) {
-//         setError("Failed to fetch songs.");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     getSongs();
-//   }, []);
-
-//   return (
-//     <div>
-//       <h2>Home</h2>
-//       {loading && <p>Loading songs...</p>}
-//       {error && <p>{error}</p>}
-//       <div className="song-list">
-//         {songs.length > 0 ? (
-//           songs.map((song) => <SongCard key={song.id} song={song} />)
-//         ) : (
-//           <p>No songs available.</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
+export default Home;
