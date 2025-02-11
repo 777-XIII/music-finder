@@ -7,21 +7,21 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const getSongs = async () => {
-      try {
-        const data = await fetchSongs();
-        console.log("Fetched songs data:", data); // Log the fetched data
-        setSongs(data || []); // Ensure songs is an array
-      } catch (error) {
-        setError("Failed to fetch songs.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const getSongs = async () => {
+  //     try {
+  //       const data = await fetchSongs();
+  //       console.log("Fetched songs data:", data); // Log the fetched data
+  //       setSongs(data || []); // Ensure songs is an array
+  //     } catch (error) {
+  //       setError("Failed to fetch songs.");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    getSongs();
-  }, []);
+  //   getSongs();
+  // }, []);
 
   return (
     <div>
