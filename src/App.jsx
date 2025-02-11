@@ -17,6 +17,6 @@ function App() {
       </Routes>
     </FavoritesProvider>
   );
-}
+};
 
 export default App;

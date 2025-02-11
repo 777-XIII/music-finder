@@ -1,16 +1,18 @@
 /* import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = () => {
   return (
-    <nav>
-      <h1>Music Player</h1>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/search">Search</Link></li>
-        <li><Link to="/favorites">Favorites</Link></li>
-      </ul>
-    </nav>
+    <div className="navbar">
+      <input type="text" placeholder="Search..." />
+      <button type="button" onClick={() => console.log("Search clicked")}>Search</button>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/favorites">Favorites</Link>
+        <Link to="/charts">Charts</Link>
+      </div>
+    </div>
   );
 };
 
