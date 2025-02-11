@@ -25,7 +25,7 @@ root.render(
 );
  */
 
-/* sevil talk to me lol */
+
 
 import React from "react";
 import ReactDom from "react-dom/client";
