@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SongCard from "../components/SongCard";
 import { searchMusic } from "../api/musicApi";
+import SongCard from "../components/SongCard";
 
 function Search() {
   const [query, setQuery] = useState("");
