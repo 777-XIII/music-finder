@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Added Routes and Route
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
     <FavoritesProvider>
       <Router>
-        <App />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
