@@ -1,6 +1,8 @@
+import "../styles/Global.css";
+
 function SongCard({ song }) {
   return (
-    <div>
+    <div className="song-card">
       <img src={song.album.cover} alt={song.title} />
       <h3>
         {song.title} - {song.artist.name}

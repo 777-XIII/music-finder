@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import { FavoritesProvider } from "./context/FavoritesContext";
+import "./styles/Global.css";
 
 function App() {
   return (
