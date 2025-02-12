@@ -1,0 +1,83 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "arial";
+  margin: 0;
+  padding: 0;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 255, 0.8),
+    0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.btn-red {
+  background: rgba(255, 0, 0, 0.6);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  transition: 0.3s;
+}
+
+.btn-red:hover {
+  background: rgba(255, 0, 0, 1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+.btn-purple {
+  background: rgba(128, 0, 128, 0.6);
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.8);
+}
+
+.btn-purple:hover {
+  background: rgba(128, 0, 128, 1);
+  box-shadow: 0 0 20px rgba(128, 0, 128, 1);
+}
+
+.btn-green {
+  background: rgba(0, 255, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.btn-green:hover {
+  background: rgba(0, 255, 0, 1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+}
+
+.song-card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  transition: 0.3s;
+}
+
+.song-card:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+  transform: scale(1.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #181818;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+.navbar a:hover {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
