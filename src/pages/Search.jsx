@@ -14,7 +14,7 @@ function Search() {
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
+      <form className="search-form" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Enter song or artist"
@@ -23,7 +23,7 @@ function Search() {
         />
         <button type="submit">Search</button>
       </form>
-      <div>
+      <div className="search-results">
         {songs.map((song) => (
           <SongCard key={song.id} song={song} />
         ))}
