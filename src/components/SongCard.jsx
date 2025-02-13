@@ -12,7 +12,7 @@ function SongCard({ song }) {
         {song.title} - {song.artist.name}
       </h3>
       <button onClick={() => toggleFavorite(song)}>
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+        {isFavorite ? <span>♥</span> : <span>♡</span>}
       </button>
       <audio controls>
         <source src={song.preview} type="audio/mpeg" />
