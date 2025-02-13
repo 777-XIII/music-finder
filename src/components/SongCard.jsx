@@ -1,5 +1,3 @@
-import "../styles/Global.css";
-
 import React, { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
 
