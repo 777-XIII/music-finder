@@ -6,7 +6,7 @@ function Favorites() {
   const { favorites } = useContext(FavoritesContext);
 
   return (
-    <div>
+    <div className="favorites-container">
       <h2>Your favorites</h2>
       {favorites.length === 0 ? (
         <p>No favorites saved.</p>

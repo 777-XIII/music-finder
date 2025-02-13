@@ -6,12 +6,12 @@ function SongCard({ song }) {
   const isFavorite = favorites.some((fav) => fav.id === song.id);
 
   return (
-    <div>
+    <div className="song-card">
       <img src={song.album.cover} alt={song.title} />
       <h3>
         {song.title} - {song.artist.name}
       </h3>
-      <button onClick={() => toggleFavorite(song)}>
+      <button className="favorite-btn" onClick={() => toggleFavorite(song)}>
         {isFavorite ? <span>♥</span> : <span>♡</span>}
       </button>
       <audio controls>
