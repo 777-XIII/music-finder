@@ -4,7 +4,7 @@ import { PlaylistContext } from "../context/PlaylistContext";
 
 function MyPlaylist() {
   const { playlist, addPlaylist, deletePlaylist } = useContext(PlaylistContext);
-  const { newPlaylistName, setNewPlaylistName } = useState("");
+  const [newPlaylistName, setNewPlaylistName] = useState("");
 
   const handleCreatePlaylist = () => {
     if (newPlaylistName.trim() === "") return;
@@ -26,9 +26,10 @@ function MyPlaylist() {
         <button onClick={handleCreatePlaylist}>Create Playlist</button>
       </div>
       <div className="playlist-grid">
-        {playlist.length === 0 ? (
+        {playlist && playlist.length === 0 ? (
           <p>No playlist created.</p>
         ) : (
+          playlist &&
           playlist.map((playlist) => (
             <div key={playlist.id} className="playlist-card">
               <h3>{playlist.name}</h3>

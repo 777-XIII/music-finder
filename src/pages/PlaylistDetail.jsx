@@ -16,11 +16,13 @@ function PlaylistDetail() {
     <div className="playlist-detail">
       <h2>{playlist.name}</h2>
 
-      {playlist.songs.length === 0 ? (
-        <p>No songs in this playlist.</p>
-      ) : (
-        playlist.songs.map((song) => <SongCard key={song.id} song={song} />)
-      )}
+      <div className="song-list">
+        {playlist.songs.length === 0 ? (
+          <p>No songs in this playlist.</p>
+        ) : (
+          playlist.songs.map((song) => <SongCard key={song.id} song={song} />)
+        )}
+      </div>
     </div>
   );
 }
