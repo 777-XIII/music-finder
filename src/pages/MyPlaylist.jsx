@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PlaylistContext } from "../context/PlaylistContext";
 
 function MyPlaylist() {
-  const { playlist, addPlaylist, deletePlaylist } = useContext(PlaylistContext);
+  const { playlists, addPlaylist, deletePlaylist } = useContext(PlaylistContext);
   const [newPlaylistName, setNewPlaylistName] = useState("");
 
   const handleCreatePlaylist = () => {
@@ -26,16 +26,16 @@ function MyPlaylist() {
         <button onClick={handleCreatePlaylist}>Create Playlist</button>
       </div>
       <div className="playlist-grid">
-        {playlist && playlist.length === 0 ? (
+        {playlists && playlists.length === 0 ? (
           <p>No playlist created.</p>
         ) : (
-          playlist &&
-          playlist.map((playlist) => (
-            <div key={playlist.id} className="playlist-card">
-              <h3>{playlist.name}</h3>
+          playlists &&
+          playlists.map((playlists) => (
+            <div key={playlists.id} className="playlist-card">
+              <h3>{playlists.name}</h3>
               <div className="playlist-actions">
-                <Link to={`/playlist/${playlist.id}`}>Open</Link>
-                <button onClick={() => deletePlaylist(playlist.id)}>
+                <Link to={`/playlist/${playlists.id}`}>Open</Link>
+                <button onClick={() => deletePlaylist(playlists.id)}>
                   Delete
                 </button>
               </div>
