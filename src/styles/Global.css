@@ -185,3 +185,55 @@ audio {
   font-size: 1.2rem;
   opacity: 0.8;
 }
+
+/* PLAYLISTS */
+
+.playlist-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.playlist-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.playlist-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.playlist-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.playlist-card:hover {
+  box-shadow: 0 0 15px rgba(127, 0, 255, 0.7);
+}
+
+.playlist-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.playlist-detail {
+  text-align: center;
+  padding: 20px;
+}
+
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
