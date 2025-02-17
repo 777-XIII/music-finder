@@ -29,9 +29,25 @@ export function PlaylistProvider({ children }) {
     localStorage.setItem("playlists", JSON.stringify(updatedPlaylists));
   }
 
+  function removeSongFromPlaylist(playlistId, songId) {
+    const updatedPlaylists = playlists.map((p) =>
+      p.id === playlistId
+        ? { ...p, songs: p.songs.filter((s) => s.id !== songId) }
+        : p
+    );
+    setPlaylists(updatedPlaylists);
+    localStorage.setItem("playlists", JSON.stringify(updatedPlaylists));
+  }
+
   return (
     <PlaylistContext.Provider
-      value={{ playlists, addPlaylist, deletePlaylist, addSongToPlaylist }}
+      value={{
+        playlists,
+        addPlaylist,
+        deletePlaylist,
+        addSongToPlaylist,
+        removeSongFromPlaylist,
+      }}
     >
       {children}
     </PlaylistContext.Provider>
