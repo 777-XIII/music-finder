@@ -4,11 +4,23 @@ import { PlaylistContext } from "../context/PlaylistContext";
 import PlaylistSelectModal from "./PlaylistSelectModal";
 
 function SongCard({ song }) {
-  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const { toggleFavorite, favorites } = useContext(FavoritesContext);
-  const { playlists, addSongToPlaylist, removeSongFromPlaylist } =
-    useContext(PlaylistContext);
+  const { playlists, addPlaylist, addSongToPlaylist } = useContext(PlaylistContext);
+  
   const isFavorite = favorites.some((fav) => fav.id === song.id);
+  const [showPopup, setShowPopup] = useState(false);
+  const [newPlaylistName, setNewPlaylistName] = useState("");
+
+  const handleAddToPlaylist = (playlistId) => {
+    addSongToPlaylist(playlistId, song);
+    setShowPopup(false);
+  };
+
+  const handleCreatePlaylist = () => {
+    if (newPlaylistName.trim() === "") return;
+    addPlaylist(newPlaylistName);
+    setNewPlaylistName("");
+  };
 
   return (
     <div className="song-card">
@@ -16,40 +28,48 @@ function SongCard({ song }) {
       <h3>
         {song.title} - {song.artist.name}
       </h3>
-      <button className="favorite-btn" onClick={() => toggleFavorite(song)}>
-        {isFavorite ? <span>♥</span> : <span>♡</span>}
-      </button>
-      {playlists.some((playlist) =>
-        playlist.songs.some((s) => s.id === song.id)
-      ) ? (
-        <button
-          onClick={() => {
-            const playlist = playlists.find((playlist) =>
-              playlist.songs.some((s) => s.id === song.id)
-            );
-            removeSongFromPlaylist(playlist.id, song.id);
-          }}
-        >
-          Remove from Playlist
+
+      <div className="aong-actions">
+        <button onClick={() => setShowPopup(true)}>Add to Playlist</button>
+        <button onClick={() => toggleFavorite(song)}>
+          {" "}
+          {/* className="favorite-btn" */}
+          {isFavorite ? <span>♥</span> : <span>♡</span>}
         </button>
-      ) : (
-        <button onClick={() => setShowPlaylistModal(true)}>
-          Add to Playlist
-        </button>
-      )}
-      {showPlaylistModal && (
-        <PlaylistSelectModal
-          playlists={playlists}
-          onSelect={(playlistId) => {
-            addSongToPlaylist(playlistId, song);
-            setShowPlaylistModal(false);
-          }}
-          onClose={() => setShowPlaylistModal(false)}
-        />
-      )}
+      </div>
+           
       <audio controls>
         <source src={song.preview} type="audio/mpeg" />
       </audio>
+
+      {/* POP-UP */}
+      {showPopup && (
+        <div className="playlist-popup">
+          <h4>Select a Playlist</h4>
+          <ul>
+            {playlists.map((playlist) => (
+              <li
+                key={playlist.id}
+                onClick={() => handleAddToPlaylist(playlist.id)}
+              >
+                {playlist.name}
+              </li>
+            ))}
+          </ul>
+
+          <input
+            type="text"
+            placeholder="New playlist name"
+            value={newPlaylistName}
+            onChange={(e) => setNewPlaylistName(e.target.value)}
+          />
+          <button onClick={handleCreatePlaylist}>+</button>
+
+          <button className="close-popup" onClick={() => setShowPopup(false)}>
+            X
+          </button>
+        </div>
+      )}
     </div>
   );
 }
