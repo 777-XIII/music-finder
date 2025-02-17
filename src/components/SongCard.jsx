@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
 import { PlaylistContext } from "../context/PlaylistContext";
-import PlaylistSelectModal from "./PlaylistSelectModal";
 
 function SongCard({ song }) {
   const { toggleFavorite, favorites } = useContext(FavoritesContext);
-  const { playlists, addPlaylist, addSongToPlaylist } = useContext(PlaylistContext);
-  
+  const { playlists, addPlaylist, addSongToPlaylist } =
+    useContext(PlaylistContext);
+
   const isFavorite = favorites.some((fav) => fav.id === song.id);
   const [showPopup, setShowPopup] = useState(false);
   const [newPlaylistName, setNewPlaylistName] = useState("");
@@ -37,7 +37,7 @@ function SongCard({ song }) {
           {isFavorite ? <span>♥</span> : <span>♡</span>}
         </button>
       </div>
-           
+
       <audio controls>
         <source src={song.preview} type="audio/mpeg" />
       </audio>
