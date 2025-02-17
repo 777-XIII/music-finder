@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
+import { PlaylistContext } from "../context/PlaylistContext";
 
 function SongCard({ song }) {
   const { toggleFavorite, favorites } = useContext(FavoritesContext);
+  const { addSongToPlaylist } = useContext(PlaylistContext);
   const isFavorite = favorites.some((fav) => fav.id === song.id);
 
   return (
@@ -13,6 +15,9 @@ function SongCard({ song }) {
       </h3>
       <button className="favorite-btn" onClick={() => toggleFavorite(song)}>
         {isFavorite ? <span>♥</span> : <span>♡</span>}
+      </button>
+      <button onClick={() => addSongToPlaylist(1, song)}>
+        Add to Playlist
       </button>
       <audio controls>
         <source src={song.preview} type="audio/mpeg" />
