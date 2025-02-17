@@ -35,6 +35,7 @@ function MyPlaylist() {
               <h3>{playlists.name}</h3>
               <div className="playlist-actions">
                 <Link to={`/playlist/${playlists.id}`}>Open</Link>
+                
                 <button onClick={() => deletePlaylist(playlists.id)}>
                   Delete
                 </button>
