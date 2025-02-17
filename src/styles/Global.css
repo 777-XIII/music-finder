@@ -28,6 +28,13 @@ body {
   left: 25px;
 }
 
+nav .navbar-icon:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff007f;
+  border-radius: 50%;
+}
+
 nav {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.9);
