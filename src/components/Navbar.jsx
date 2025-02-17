@@ -6,7 +6,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       {/* CD-Icon ganz links */}
-      <FontAwesomeIcon icon={faCompactDisc} className="navbar-icon" />
+      <Link to="/">
+        <FontAwesomeIcon icon={faCompactDisc} className="navbar-icon" />
+      </Link>
 
       {/* Links in der Navbar */}
       <Link to="/"> Home</Link>
