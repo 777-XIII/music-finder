@@ -4,7 +4,8 @@ import { PlaylistContext } from "../context/PlaylistContext";
 
 function SongCard({ song }) {
   const { toggleFavorite, favorites } = useContext(FavoritesContext);
-  const { addSongToPlaylist } = useContext(PlaylistContext);
+  const { addSongToPlaylist } =
+    useContext(PlaylistContext);
 
   const isFavorite = favorites.some((fav) => fav.id === song.id);
   const [showPopup, setShowPopup] = useState(false);
