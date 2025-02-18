@@ -350,6 +350,15 @@ audio {
   background: #ff007f;
 }
 
+/* POPUP-MESSAGE */
+
+.popup-message {
+  color: #ff007f;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
 /* close btn */
 
 .close-poopup {
