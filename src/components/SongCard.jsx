@@ -29,7 +29,7 @@ function SongCard({ song }) {
         {song.title} - {song.artist.name}
       </h3>
 
-      <div className="aong-actions">
+      <div className="song-actions">
         <button onClick={() => setShowPopup(true)}>Add to Playlist</button>
         <button onClick={() => toggleFavorite(song)}>
           {" "}
