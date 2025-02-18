@@ -4,7 +4,7 @@ import { PlaylistContext } from "../context/PlaylistContext";
 
 function SongCard({ song }) {
   const { toggleFavorite, favorites } = useContext(FavoritesContext);
-  const { addSongToPlaylist } =
+  const { playlists, addPlaylist, addSongToPlaylist } =
     useContext(PlaylistContext);
 
   const isFavorite = favorites.some((fav) => fav.id === song.id);
