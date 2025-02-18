@@ -11,7 +11,11 @@ function Favorites() {
       {favorites.length === 0 ? (
         <p>No favorites saved.</p>
       ) : (
-        favorites.map((song) => <SongCard key={song.id} song={song} />)
+        <div className="favorites-grid">
+          {favorites.map((song) => (
+            <SongCard key={song.id} song={song} />
+          ))}
+        </div>
       )}
     </div>
   );

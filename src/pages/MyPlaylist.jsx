@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { PlaylistContext } from "../context/PlaylistContext";
 
 function MyPlaylist() {
-  const { playlists, addPlaylist, deletePlaylist } = useContext(PlaylistContext);
+  const { playlists, addPlaylist, deletePlaylist } =
+    useContext(PlaylistContext);
   const [newPlaylistName, setNewPlaylistName] = useState("");
 
   const handleCreatePlaylist = () => {
@@ -34,8 +35,13 @@ function MyPlaylist() {
             <div key={playlists.id} className="playlist-card">
               <h3>{playlists.name}</h3>
               <div className="playlist-actions">
-                <Link to={`/playlist/${playlists.id}`}>Open</Link>
-                
+                <Link to={`/playlist/${playlists.id}`}>
+                  <button onClick={() => navigate(`/playlist/${playlists.id}`)}>
+                    {" "}
+                    Open{" "}
+                  </button>
+                </Link>
+
                 <button onClick={() => deletePlaylist(playlists.id)}>
                   Delete
                 </button>
