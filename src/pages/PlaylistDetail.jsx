@@ -4,7 +4,7 @@ import { PlaylistContext } from "../context/PlaylistContext";
 import SongCard from "../components/SongCard";
 
 function PlaylistDetail() {
-  const { playlists, addSongToPlaylist } = useContext(PlaylistContext);
+  const { playlists } = useContext(PlaylistContext);
   const { id } = useParams();
   const playlist = playlists.find((p) => p.id === Number(id));
 
@@ -15,7 +15,6 @@ function PlaylistDetail() {
   return (
     <div className="playlist-detail">
       <h2>{playlist.name}</h2>
-
       <div className="song-list">
         {playlist.songs.length === 0 ? (
           <p>No songs in this playlist.</p>
