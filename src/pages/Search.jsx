@@ -1,11 +1,8 @@
-import React, { useState, useContext } from "react";
-import { PlaylistContext } from "../context/PlaylistContext";
+import React, { useState } from "react";
 import { searchMusic } from "../api/musicApi";
 import SongCard from "../components/SongCard";
 
 function Search() {
-  const { playlists } = useContext(PlaylistContext);
-  const defaultPlaylistId = playlists.length > 0 ? playlists[0].id : null;
   const [query, setQuery] = useState("");
   const [songs, setSongs] = useState([]);
 
@@ -28,7 +25,7 @@ function Search() {
       </form>
       <div className="search-results">
         {songs.map((song) => (
-          <SongCard key={song.id} song={song} playlistId={defaultPlaylistId} />
+          <SongCard key={song.id} song={song} />
         ))}
       </div>
     </div>

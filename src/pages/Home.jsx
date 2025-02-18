@@ -2,7 +2,6 @@ import Playlists from "./MyPlaylist";
 import Favorites from "./Favorites";
 import Search from "./Search";
 
-
 function Home() {
   return (
     <div>
@@ -16,20 +15,17 @@ function Home() {
       {/* Unterer Bereich mit den drei Containern */}
       <div className="home-container">
         {/* Container für Playlists */}
-        <div className="home-box">
-          <h2>My Playlists</h2>
+        <div className="home-box1">
           <Playlists />
         </div>
 
         {/* Container für Favorites */}
-        <div className="home-box">
-          <h2>Favorites</h2>
+        <div className="home-box2">
           <Favorites />
         </div>
 
         {/* Container für Search */}
-        <div className="home-box">
-          <h2>Search</h2>
+        <div className="home-box3">
           <Search />
         </div>
       </div>
